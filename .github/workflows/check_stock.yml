@@ -1,0 +1,35 @@
+name: Surveillance Stocks Consoles & GTA 6
+
+on:
+  schedule:
+    # Exécution automatique toutes les 10 minutes
+    - cron: "*/10 * * * *"
+  # Permet de lancer un test manuellement depuis l'onglet Actions
+  workflow_dispatch:
+
+jobs:
+  check-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances
+        run: pip install curl_cffi
+
+      - name: Lancer la vérification des stocks
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python checker.py
+
+      - name: Publier les résultats dans stocks.json
+        run: |
+          git config user.name "StockBot"
+          git config user.email "actions@github.com"
+          git add stocks.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Mise à jour stocks" && git push)

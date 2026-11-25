@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-11-25T17:51:20.201398+00:00",
+  "items": [
+    {
+      "id": "ps5-standard-direct",
+      "name": "PS5 Standard (Édition Disque)",
+      "shop": "PlayStation Direct FR",
+      "type": "Internet",
+      "url": "https://direct.playstation.com/fr-fr/buy-consoles/playstation5-console",
+      "in_stock": true,
+      "status": "En stock"
+    },
+    {
+      "id": "xbox-series-x-ms",
+      "name": "Xbox Series X 1 To",
+      "shop": "Microsoft Store FR",
+      "type": "Internet",
+      "url": "https://www.xbox.com/fr-FR/consoles/xbox-series-x",
+      "in_stock": true,
+      "status": "En stock"
+    },
+    {
+      "id": "gta6-ps5-micromania",
+      "name": "GTA VI (PS5)",
+      "shop": "Micromania (Web & Retrait 1h)",
+      "type": "Internet / Magasin",
+      "url": "https://www.micromania.fr/",
+      "in_stock": false,
+      "status": "Rupture de stock"
+    }
+  ]
+}
